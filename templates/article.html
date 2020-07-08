@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}{{ article.title }} - {{ SITENAME }}{% endblock %}
+
+
+{% block content %}
+<div class="article">
+    <h1>{{article.title}}</h1>
+    <time datetime="{{article.date}}">{{article.date|strftime('%d %B %Y')}}</time>
+    {% if article.readtime %}
+    <p class='est'>Estimated reading time: {{article.readtime.minutes}} min.</p>
+    {% endif %}
+
+    <div style="display:none;">$$
+    \definecolor{w1}{RGB}{230,159,0}
+    \definecolor{w2}{RGB}{86,180,233}
+    \definecolor{w3}{RGB}{0,158,115}
+    \definecolor{w4}{RGB}{204,121,167}
+    \definecolor{w5}{RGB}{0,114,178}
+    \definecolor{w6}{RGB}{213,94,0}
+    \definecolor{w7}{RGB}{240,228,66}
+    $$</div>
+    {{article.content}}
+
+    {% if article.similar_posts %}
+        <aside>
+        <h1>Similar posts:</h1>
+        <ul>
+        {% for similar in article.similar_posts %}
+            <li><a href="{{ SITEURL }}/{{ similar.url }}">{{ similar.title }}</a></li>
+        {% endfor %}
+        </ul>
+        </aside>
+    {% endif %}
+</div>
+{% endblock content %}

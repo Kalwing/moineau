@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+    <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/main.css" rel="stylesheet">
+  </head>
+  {% if EXTRA_HEADER %}
+    {{ EXTRA_HEADER }}
+  {% endif %}
+  <body>
+
+    <div class="container">
+      <nav>
+        <h1><a href="/">{{ SITENAME }}{%if SITESUBTITLE %}<span class="subtitle"> – {{ SITESUBTITLE }}</span>{% endif %}</a></h1>
+        <ul>
+        {% for page, path in SECTIONS %}
+          <li><a href="/{{path}}">{{page}}</a></li>
+        {% endfor %}
+        </ul>
+      </nav>
+      {% block content %}{% endblock content %}
+    </div>
+  </body>
+</html>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ TeX: { extensions: ["color.js"] }});
+</script>

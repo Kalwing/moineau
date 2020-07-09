@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
-    <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/main.css" rel="stylesheet">
+    <link href="/{{ THEME_STATIC_DIR }}/css/main.css" rel="stylesheet">
+    <link href="/{{ THEME_STATIC_DIR }}/css/pygments-colorful.css" rel="stylesheet">
   </head>
   {% if EXTRA_HEADER %}
     {{ EXTRA_HEADER }}
@@ -20,9 +21,12 @@
         </ul>
       </nav>
       {% block content %}{% endblock content %}
+          
+    <footer>
+    Powered by <a href="http://getpelican.com/">Pelican</a>, "Moineau" theme by Thomas Dargent
+    </footer>
     </div>
+
   </body>
 </html>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({ TeX: { extensions: ["color.js"] }});
-</script>
+{% block script %}{% endblock script%}

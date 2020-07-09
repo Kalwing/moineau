@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block title %}{{ article.title }} - {{ SITENAME }}{% endblock %}
 
-
 {% block content %}
 <div class="article">
     <h1>{{article.title}}</h1>
@@ -26,10 +25,33 @@
         <h1>Similar posts:</h1>
         <ul>
         {% for similar in article.similar_posts %}
-            <li><a href="{{ SITEURL }}/{{ similar.url }}">{{ similar.title }}</a></li>
+            <li><a href="/{{ similar.url }}">{{ similar.title }}</a></li>
         {% endfor %}
         </ul>
         </aside>
     {% endif %}
 </div>
 {% endblock content %}
+{% block script %}
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ TeX: { extensions: ["color.js"] }});
+</script>
+<script type="text/javascript">
+  var tables = Array.from(document.getElementsByTagName("table"));
+  var imgs = Array.from(document.getElementsByTagName("img"));
+  
+  function center_elems(elems) {
+    for (i = 0; i < elems.length; ++i) {
+      var parent = elems[i].parentNode;
+      var wrapper = document.createElement('div');
+      wrapper.className = "centered-container"
+      
+      parent.replaceChild(wrapper, elems[i]);
+      wrapper.appendChild(elems[i]);
+    }
+  }
+  
+  center_elems(tables);
+  center_elems(imgs); 
+</script>
+{% endblock script%}

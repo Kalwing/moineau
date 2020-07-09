@@ -74,6 +74,15 @@ footer {
     text-align: center;
     margin-top: 2.5em;
 }
+li ul {
+    margin-top: -1em;
+    opacity: 0.8;
+    color: #452d55;
+}
+em {
+    font-style: italic;
+    color: #5c619f;
+}
 /* Menu */
 nav {
     border-bottom: dotted 2px #02334a;

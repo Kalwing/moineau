@@ -5,28 +5,43 @@
     <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
     <link href="/{{ THEME_STATIC_DIR }}/css/main.css" rel="stylesheet">
     <link href="/{{ THEME_STATIC_DIR }}/css/pygments-colorful.css" rel="stylesheet">
+    <!-- Used for pelican_dynamic-->
+    {% if article %}
+      {% if article.stylesheets %}
+          {% for stylesheet in article.stylesheets %}
+{{ stylesheet }}
+          {% endfor %}
+      {% endif %}
+    {% endif %}
   </head>
-  {% if EXTRA_HEADER %}
-    {{ EXTRA_HEADER }}
-  {% endif %}
-  <body>
 
+  <body>
+    <nav>
+      <h1><a href="/">{{ SITENAME }}{%if SITESUBTITLE %}<span class="subtitle"> – {{ SITESUBTITLE }}</span>{% endif %}</a></h1>
+      <ul>
+      {% for page, path in SECTIONS %}
+        <li><a href="/{{path}}">{{page}}</a></li>
+      {% endfor %}
+      </ul>
+    </nav>
     <div class="container">
-      <nav>
-        <h1><a href="/">{{ SITENAME }}{%if SITESUBTITLE %}<span class="subtitle"> – {{ SITESUBTITLE }}</span>{% endif %}</a></h1>
-        <ul>
-        {% for page, path in SECTIONS %}
-          <li><a href="/{{path}}">{{page}}</a></li>
-        {% endfor %}
-        </ul>
-      </nav>
-      {% block content %}{% endblock content %}
+    
+    {% block content %}{% endblock content %}
           
-    <footer>
-    Powered by <a href="http://getpelican.com/">Pelican</a>, "Moineau" theme by Thomas Dargent
-    </footer>
+      <footer>
+      Powered by <a href="http://getpelican.com/">Pelican</a>, "Moineau" theme by Thomas Dargent
+      </footer>
     </div>
 
   </body>
+  <!--Used for pelican_dynamic-->
+{% if article %}
+    {% if article.javascripts %}
+        {% for javascript in article.javascripts %}
+{{ javascript }}
+        {% endfor %}
+    {% endif %}
+{% endif %}
+
 </html>
 {% block script %}{% endblock script%}

@@ -10,7 +10,9 @@
     <p class='est'>Estimated reading time: {{article.readtime.minutes}} min.</p>
     {% endif %}
     {% if article.translations %}
-    Translations: {{article.lang}}{% for trans in article.translations%}, <a href="/{{trans.url}}">{{trans.lang}}</a>{%endfor%}
+    <p>
+      Translations: {{article.lang}}{% for trans in article.translations%}, <a href="/{{trans.url}}">{{trans.lang}}</a>{%endfor%}
+    </p>
     {%endif%}
 
     <div style="display:none;">$$

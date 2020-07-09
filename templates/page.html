@@ -3,7 +3,9 @@
 
 {% block content %}
     {% if page.translations %}
-    Translations: {{page.lang}}{% for trans in page.translations%}, <a href="/{{trans.url}}">{{trans.lang}}</a>{%endfor%}
+    <p>
+        Translations: {{page.lang}}{% for trans in page.translations%}, <a href="/{{trans.url}}">{{trans.lang}}</a>{%endfor%}
+    </p>
     {%endif%}
     {{page.content}}
 {% endblock content %}

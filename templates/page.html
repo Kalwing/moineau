@@ -2,8 +2,8 @@
 {% block title %}{{ page.title }} - {{ SITENAME }}{% endblock %}
 
 {% block content %}
-{% if page.translations %}
-Translations: {{page.lang}}{% for trans in page.translations%}, <a href="/{{trans.url}}">{{trans.lang}}</a>{%endfor%}
-{%endif%}
+    {% if page.translations %}
+    Translations: {{page.lang}}{% for trans in page.translations%}, <a href="/{{trans.url}}">{{trans.lang}}</a>{%endfor%}
+    {%endif%}
     {{page.content}}
 {% endblock content %}

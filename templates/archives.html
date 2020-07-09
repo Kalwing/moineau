@@ -6,8 +6,9 @@
 
 {% for year, date_year in dates|groupby( 'date.year' )|reverse %}
 <h2>{{ year }}</h2>
+    <ul>
     {% for month, articles in date_year|groupby( 'date.month' ) %}
-        <h3>{{ articles[ 0 ].date.strftime( '%B' ) }}</h3>
+        <li> <h3 class="small">{{ articles[ 0 ].date.strftime( '%B' ) }}</h3>
         <ul>
             {% for article in articles %}
             <li>
@@ -16,6 +17,8 @@
             </li>
             {% endfor %}
         </ul>
+        </li>
     {% endfor %}
+    </ul>
 {% endfor %}
 {% endblock %}

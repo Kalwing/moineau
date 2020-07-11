@@ -41,6 +41,10 @@ a {
      a:visited {
         color:#4f5a96;
     }
+.smaller {
+    font-size: 0.666em;
+    font-weight: lighter;
+}
 .container {
         max-width: 37em;
         margin: 0 auto;

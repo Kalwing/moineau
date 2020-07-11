@@ -1,8 +1,30 @@
 <!DOCTYPE html>
+    {% set title_ %}{% block title %}{{ SITENAME }}{% endblock title %}{% endset %}
+    {% set desc_ %}{% block desc %}{% endblock desc %}{% endset %}
 <html lang="{{ DEFAULT_LANG }}">
   <head>
     <meta charset="utf-8">
-    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+    <title>
+      {{ title_ }}
+    </title>
+    <meta name="title" content="{{ title_ }}">
+    <meta name="description" content="{{ desc_ |e}}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ SITE_URL }}">
+    <meta property="og:title" content="{{ title_ }}">
+    <meta property="og:description" content="{{ desc_ |e}}">
+    <meta property="og:image" content="/{{ THEME_STATIC_DIR }}/img/card.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ SITE_URL }}">
+    <meta property="twitter:title" content="{{ title_ }}">
+    <meta property="twitter:description" content="{{ desc_ |e}}">
+    <meta property="twitter:image" content="/{{ THEME_STATIC_DIR }}/img/card.png">
+
+
     <link href="/{{ THEME_STATIC_DIR }}/css/main.css" rel="stylesheet">
     <link href="/{{ THEME_STATIC_DIR }}/css/pygments-colorful.css" rel="stylesheet">
     <!-- Used for pelican_dynamic-->

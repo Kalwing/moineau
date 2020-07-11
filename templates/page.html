@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block title %}{{ page.title }} - {{ SITENAME }}{% endblock %}
+{% block desc %}{{page.summary|striptags}}{% endblock desc %}
+
 
 {% block content %}
     {% if page.translations %}

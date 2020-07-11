@@ -7,6 +7,14 @@
         {% for article in articles_page.object_list %}
         <li>
             <a href="/{{ article.url }}">{{ article.title }}</a>
+            <span class="smaller">
+            {% if article.translations %}
+                (<a href="/{{article.url}}">{{article.lang}}</a>,
+                {% for trans in article.translations%}
+                    <a href="/{{trans.url}}">{{trans.lang}}</a>
+                {%endfor%})
+            {%endif%}
+            </span>
             <time datetime="{{article.date}}">{{ article.date|strftime('%d %B %Y') }}</time>
             {% if article.readtime %}
                 <p class="est">Estimated Reading Time: {{article.readtime.minutes}} min.</p>

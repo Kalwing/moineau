@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block title %}{{ article.title }} - {{ SITENAME }}{% endblock %}
+{% block desc %}{{article.summary | striptags |e}}{% endblock desc %}
 
 {% block content %}
 

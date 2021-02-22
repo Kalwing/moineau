@@ -129,6 +129,7 @@ nav {
     nav ul {
         text-align: right;
         padding: 0;
+        margin: 0.6em
     }
         nav li+li::before{
             content: "–";

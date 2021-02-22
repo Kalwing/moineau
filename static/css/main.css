@@ -12,8 +12,9 @@ body {
     font-family: Frutiger, Univers, "Gill Sans", "Gill Sans MT","Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, "Ubuntu", sans-serif;
     color: #02334a;
     background-color:#faf1f6;
-    line-height: 1.25em;
+    line-height: 1.4em;
     margin: 0;
+    font-size: 16.5px;
 }
 h1, nav, h2, h3 {
     font-family: "Playfair display", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
@@ -77,6 +78,9 @@ footer {
     padding: 2.5em 0;
     text-align: center;
     margin-top: 2.5em;
+}
+ul {
+    margin: -0.5em 0.75em
 }
 li ul {
     margin-top: -1em;

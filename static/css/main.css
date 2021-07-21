@@ -11,7 +11,7 @@ body {
     /*https://css-tricks.com/snippets/css/font-stacks/*/
     font-family: Frutiger, Univers, "Gill Sans", "Gill Sans MT","Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, "Ubuntu", sans-serif;
     color: #02334a;
-    background-color:#faf1f6;
+    background-color:#fffbfd;
     line-height: 1.4em;
     margin: 0;
     font-size: 16.5px;
@@ -47,7 +47,7 @@ a {
     font-weight: lighter;
 }
 .container {
-        max-width: 37em;
+        max-width: 47em;
         margin: 0 auto;
 }
 .centered-container {
@@ -83,9 +83,9 @@ ul {
     margin: -0.5em 0.75em
 }
 li ul {
-    margin-top: -1em;
-    opacity: 0.8;
-    color: #452d55;
+    margin-top: 0em;
+    /* opacity: 0.8; */
+    color: #846897;
 }
 em {
     font-style: italic;
@@ -95,7 +95,7 @@ em {
 nav {
     border-bottom: dotted 2px #02334a;
     padding: 1.25em 1.25em 0 1.25em;
-    width: 42em;
+    max-width: 42em;
     margin: 0 auto;
 }
     nav a {
@@ -250,3 +250,101 @@ table {
     margin-right: 1em;
     shape-outside: circle(50%);
 }
+
+/* cv */
+.cv {
+	margin: 1em .75em;
+    position: relative;
+    padding: 0.5em 0 0 3.25em;
+}
+    .cv h4 {
+        font-family: inherit;
+        font-size: 1em;
+    }
+.cv::before {
+	width: 0.2em;
+	height: 100%;
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	border-radius: 0.6em;
+    background-image: linear-gradient(0, rgb(98, 58, 162) 0%, rgb(195, 60, 152) 90%);
+    background-image: linear-gradient(180deg, rgba(98, 58, 162, 0) 0%,  rgb(195, 60, 152) 2.5em, rgb(98, 58, 162) 100%);
+    left: 1.4em;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+    z-index: -1;
+    opacity:0.8;
+}
+
+
+.cv>li {
+    list-style: none;
+}
+
+
+.place {
+    margin-top: -0.25rem;
+    font-style: italic;
+}
+.place + ul {
+    border-left: 1px solid #a9b9c5;
+    margin: 0 0 2rem 0;
+    padding: 0 0 0 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+.date {
+    /* position: absolute;
+    right: 0;
+    z-index: 1; */
+    /* display: flex; */
+    align-items: stretch;
+    align-self:center;
+    font-weight: light;
+}
+.datecont {
+    display: flex;
+    align-items: stretch;
+    align-content: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin-top: 1rem;
+    /* position: relative; */
+}
+    .datecont > *:first-child {
+        flex: 1;
+        display : flex;
+        align-items: end;
+    }
+    .datecont > h4 {
+        margin-top: 0;
+        margin-bottom: 0.5em;
+    }
+    .datecont > *:first-child:after {
+            content: " ";
+            /* display: inline-block; */
+            border-bottom: 1px solid #a9b9c5;
+            height: 1px;
+            margin: 0 1rem;
+            flex-grow: 1;
+            min-width: 1em;
+            align-self: center;
+    }
+
+.cv h4 {
+    position: relative;
+}
+    h4::before {
+        content: "";
+        width: 1em;
+        height: 1em;
+        background-color: white;
+        position: absolute;
+        left: -2.25em;
+        top: 50%;
+        top: calc(50% - 0.5em);
+        border-radius: 50%;
+        box-shadow: 0px 0px 5px 0px rgba(50,0,50,1);
+    }

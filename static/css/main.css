@@ -20,19 +20,19 @@ h1, nav, h2, h3 {
     font-family: "Playfair display", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
 }
 h1 {
-    font-size: 3.375em;
+    font-size: 3.375rem;
     line-height: 0.833em;
 }
 h2 {
-    font-size: 2.25em;
+    font-size: 2.25rem;
     line-height: 0.833em;
 }
 h3, .posts a {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     line-height: 1.25em;
 }
 h4, .small {
-    font-size: 1em;
+    font-size: 1rem;
     line-height: 1.25em;
     font-weight: bold;
 }
@@ -259,7 +259,7 @@ table {
 }
     .cv h4 {
         font-family: inherit;
-        font-size: 1em;
+        font-size: 1rem;
     }
 .cv::before {
 	width: 0.2em;

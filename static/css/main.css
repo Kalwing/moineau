@@ -36,6 +36,9 @@ h4, .small {
     line-height: 1.25em;
     font-weight: bold;
 }
+p {
+    font-size: 1rem;
+}
 a {
     color:#056E90;
 }
